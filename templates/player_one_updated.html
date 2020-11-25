@@ -1,0 +1,16 @@
+{% block body %}
+<body class = "body">
+	<div class = "container">
+	{% include 'forms.html' %}
+
+			{% for x in playerOneStats %}
+			<p>{{x}}</p>
+			{% endfor %}
+
+			{% for x in playerTwoStats %}
+			<p>{{x}}</p>
+			{% endfor %}
+
+	</div>
+</body>
+{% endblock %}
