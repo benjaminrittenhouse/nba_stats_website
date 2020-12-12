@@ -1,16 +1,111 @@
+<!--
+Author: Benjamin Rittenhouse
+https://github.com/benjaminrittenhouse
+11/26/2020
+forms.html
+updated page with information that user entered looped through (player stats) and posted here
+-->
+<!DOCTYPE html>
+<html lang="en">
+	{% include 'head.html' %}
+
+
 {% block body %}
 <body class = "body">
 	<div class = "container">
-	{% include 'forms.html' %}
+		<form action ="" method="POST">
 
-			{% for x in playerOneStats %}
-			<p>{{x}}</p>
-			{% endfor %}
+		<p>
+			<label for="plyrOne">Player One</label>
+			<input type = "text" name = "playerOneName">
+		</p>
+		<p>
+			<label for="plyrTwo">Player Two</label>
+			<input type = "text" name = "playerTwoName">
+		</p>
+		<p>
+			<input type = "submit">
+		</p>
+		</form>
+	</div>
 
-			{% for x in playerTwoStats %}
-			<p>{{x}}</p>
-			{% endfor %}
+			<div class = "container playerNames">
+				<div class = "player-img" style = "color: {{playerOneStats[6]}}">{{playerOneStats[0]}}</div>
+				<div class = "player-img" style = "color: {{playerTwoStats[6]}}">{{playerTwoStats[0]}}</div>
+			</div>
 
+			<!----------- BARS -------------->
+			<div class="container" id = "bars">
+  				<div class="row centerBars">
+    				<div class="col" id = "alignment">
+						<div class="progress progress-bar-vertical">
+							<div class="progress-bar bg-custom" role="progressbar" style="height: {{ (playerOneStats[1]|float / 100) * 300}}%; background-color: {{playerOneStats[6]}}" aria-valuenow="{{ (playerOneStats[1]|float / 100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{playerOneStats[1]}}</div>
+							</div>
+							<div class="progress progress-bar-vertical last">
+							<div class="progress-bar bg-custom" role="progressbar" style="height: {{ (playerTwoStats[1]|float / 100) * 300 }}%; background-color: {{playerTwoStats[6]}}" aria-valuenow="{{ (playerTwoStats[1]|float / 100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{playerTwoStats[1]}}</div>
+							</div>
+   					</div>
+    				<div class="col">
+						<div class="progress progress-bar-vertical">
+						<div class="progress-bar bg-custom" role="progressbar" style="height: {{ (playerOneStats[2]|float / 100) * 250 }}%; background-color: {{playerOneStats[6]}}" aria-valuenow=" {{ (playerOneStats[2]|float / 100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{ playerOneStats[2] }}</div>
+						</div>
+
+						<div class="progress progress-bar-vertical last">
+						<div class="progress-bar bg-custom" role="progressbar" style="height: {{ (playerTwoStats[2]|float / 100) * 250 }}%; background-color: {{playerTwoStats[6]}}" aria-valuenow="{{ (playerTwoStats[2]|float / 100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{ playerTwoStats[2] }}</div>
+						</div>
+    				</div>
+    				<div class="col">
+						<div class="progress progress-bar-vertical">
+						<div class="progress-bar bg-custom" role="progressbar" style="height: {{ (playerOneStats[3]|float / 100) * 250 }}%; background-color: {{playerOneStats[6]}}" aria-valuenow="{{ (playerOneStats[3]|float / 100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{playerOneStats[3]}}</div>
+						</div>
+
+						<div class="progress progress-bar-vertical last">
+						<div class="progress-bar bg-custom" role="progressbar" style="height: {{ (playerTwoStats[3]|float / 100) * 250 }}%; background-color: {{playerTwoStats[6]}}" aria-valuenow="{{ (playerTwoStats[3]|float / 100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{playerTwoStats[3]}}</div>
+						</div>
+					</div>
+    			<div class="col">
+						<div class="progress progress-bar-vertical">
+						<div class="progress-bar bg-custom" role="progressbar" style="height: {{ (playerOneStats[4]|float / 100) * 250 }}%; background-color: {{playerOneStats[6]}}" aria-valuenow=" {{ (playerOneStats[4]|float / 100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{playerOneStats[4]}}</div>
+						</div>
+
+						<div class="progress progress-bar-vertical last">
+						<div class="progress-bar bg-custom" role="progressbar" style="height: {{ (playerTwoStats[4]|float / 100) * 250 }}%; background-color: {{playerTwoStats[6]}}" aria-valuenow="{{ (playerTwoStats[4]|float / 100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{playerTwoStats[4]}}</div>
+						</div>
+    			</div>
+    			<div class="col">
+						<div class="progress progress-bar-vertical">
+						<div class="progress-bar bg-custom" role="progressbar" style="height:{{ (playerOneStats[5]|float / 100) * 1000 }}%; background-color: {{playerOneStats[6]}}" aria-valuenow="{{ (playerOneStats[5]|float / 100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{playerOneStats[5]}}</div>
+						</div>
+
+						<div class="progress progress-bar-vertical last">
+						<div class="progress-bar bg-custom" role="progressbar" style="height:{{ (playerTwoStats[5]|float / 100) * 1000 }}%; background-color: {{playerTwoStats[6]}}" aria-valuenow="{{ (playerTwoStats[5]|float / 100) * 100 }}" aria-valuemin="0" aria-valuemax="100">{{playerTwoStats[5]}}</div>
+						</div>
+    			</div> 
+  			</div>
+		</div>
+
+
+	<!-- TAGS -->
+	<div class="container tags">
+  		<div class="row row-tags">
+   		 	<div class="col col-tags">
+				<div id = "ppgTag" class = "statTag">PPG</div>
+    		</div>
+    	<div class="col col-tags">
+    		<div id = "apgTag" class = "statTag">APG</div>
+    	</div>
+    	<div class="col col-tags">
+    		<div id = "rpgTag" class = "statTag">RPG</div>
+    	</div>
+    	<div class="col col-tags">
+    		<div id = "asTag" class = "statTag">AS</div>
+    	</div>
+    	<div class="col col-tags">
+    		<div id = "ringsTag" class = "statTag">Rings</div>
+    	</div> 
+  		</div>
 	</div>
 </body>
 {% endblock %}
+
+</html>
