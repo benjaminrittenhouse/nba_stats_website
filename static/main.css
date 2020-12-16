@@ -63,7 +63,7 @@
 }
 
 div.progress.progress-bar-vertical{
-  background-color: #141414;
+  background-color: transparent;
 }
 
 
@@ -83,6 +83,22 @@ div.progress.progress-bar-vertical{
   transform: translate(-50%, -50%);
 }
 
-.player-img {
+.player-title {
   font-size: 30px;
+}
+
+#plyrOne {
+  color: white;
+}
+
+#plyrTwo {
+  color: white;
+}
+
+.formLabel {
+  color: white;
+}
+
+.namesRow {
+  text-align: center;
 }
