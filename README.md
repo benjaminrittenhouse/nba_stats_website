@@ -1,6 +1,6 @@
 # nba_stats_website - Benjamin Rittenhouse
 
-# About (Incomplete, 12/12/2020)
+# About (Incomplete, 12/21/2020)
 NBA Player Comparison Website
 This website uses the Flask / Jinja web framework to allow a user to input two NBA players and get back statistics for each player, comparing them with bar graphs for each statistical category.
 
