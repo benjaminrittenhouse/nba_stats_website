@@ -12,26 +12,10 @@ updated page with information that user entered looped through (player stats) an
 
 {% block body %}
 <body class = "body">
-	<div class = "container">
+	<div class = "container" id = "inputform">
 		{% include 'forms.html' %}
 	</div>
 
-
-			<div class = "container playerNames">
-				<div class = "row namesRow">
-					
-					<div class = "col names">
-						<div class = "player-img" style = "color: {{playerOneStats[6]}}"> <img src="img_girl.jpg"> </div>
-					</div>
-
-					<div class = "col names">
-						<div class = "player-img" style = "color: {{playerTwoStats[6]}}"> <img src="img_girl.jpg"> </div>
-					</div>
-
-				</div>
-				
-				
-			</div>
 
 
 			<div class = "container playerNames">
@@ -123,5 +107,7 @@ updated page with information that user entered looped through (player stats) an
 	</div>
 </body>
 {% endblock %}
+
+{% include 'footer.html' %}
 
 </html>

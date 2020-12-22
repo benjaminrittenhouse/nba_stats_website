@@ -118,9 +118,3 @@ class Player:
 		location = string.find("#")
 		string = string[location:location+7]
 		return string
-
-#name = input("What player stats would you like to retrieve?\n")
-name = "joe ingles"
-player = Player(name)
-player.__init__(name)
-print(player.jerseyColor())
